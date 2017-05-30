@@ -1,0 +1,25 @@
+﻿<Application x:Class="Active.Build.App"
+						 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						 StartupUri="MainWindow.xaml">
+	<Application.Resources>
+		<BitmapImage x:Key="Save" UriSource="Resources/Save.png" />
+		<BitmapImage x:Key="SaveAs" UriSource="Resources/SaveAs.png" />
+		<BitmapImage x:Key="Open" UriSource="Resources/Open.png" />
+		<BitmapImage x:Key="Run" UriSource="Resources/Run.png" />
+		<BitmapImage x:Key="New" UriSource="Resources/New.png" />
+		<BitmapImage x:Key="Protect" UriSource="Resources/Protect.png" />
+		<BitmapImage x:Key="Package" UriSource="Resources/Package.png" />
+
+		<BitmapImage x:Key="ISClass" UriSource="ExpressionEditor/Images/Class.png" />
+		<BitmapImage x:Key="ISDelegate" UriSource="ExpressionEditor/Images/Delegate.png" />
+		<BitmapImage x:Key="ISEnum" UriSource="ExpressionEditor/Images/Enum.png" />
+		<BitmapImage x:Key="ISEvent" UriSource="ExpressionEditor/Images/Event.png" />
+		<BitmapImage x:Key="ISField" UriSource="ExpressionEditor/Images/Field.png" />
+		<BitmapImage x:Key="ISInterface" UriSource="ExpressionEditor/Images/Interface.png" />
+		<BitmapImage x:Key="ISMethod" UriSource="ExpressionEditor/Images/Method.png" />
+		<BitmapImage x:Key="ISNamespace" UriSource="ExpressionEditor/Images/Namespace.png" />
+		<BitmapImage x:Key="ISProperty" UriSource="ExpressionEditor/Images/Properties.png" />
+		<BitmapImage x:Key="ISStructure" UriSource="ExpressionEditor/Images/Structure.png" />
+	</Application.Resources>
+</Application>

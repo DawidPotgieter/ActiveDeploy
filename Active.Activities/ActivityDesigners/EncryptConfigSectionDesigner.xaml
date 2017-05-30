@@ -1,0 +1,71 @@
+﻿<sap:ActivityDesigner x:Class="Active.Activities.ActivityDesigners.EncryptConfigSectionDesigner"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Active.Activities.ActivityDesigners.Converters"
+		xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+		xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+		xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Width="Auto" Loaded="ActivityDesigner_Loaded">
+	<sap:ActivityDesigner.Icon>
+		<DrawingBrush>
+			<DrawingBrush.Drawing>
+				<ImageDrawing>
+					<ImageDrawing.Rect>
+						<Rect Location="0,0" Size="16,16" ></Rect>
+					</ImageDrawing.Rect>
+					<ImageDrawing.ImageSource>
+						<BitmapImage UriSource="/Active.Activities;component/Resources/EncryptConfigSection.png"></BitmapImage>
+					</ImageDrawing.ImageSource>
+				</ImageDrawing>
+			</DrawingBrush.Drawing>
+		</DrawingBrush>
+	</sap:ActivityDesigner.Icon>
+	<sap:ActivityDesigner.Resources>
+		<ResourceDictionary>
+			<sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+			<local:InArgumentBoolConverter x:Key="InArgumentBoolConverter" />
+		</ResourceDictionary>
+	</sap:ActivityDesigner.Resources>
+	<Grid Width="Auto">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" Name="UsernameRow" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="500" />
+			<ColumnDefinition Width="35" />
+		</Grid.ColumnDefinitions>
+		<sapv:ExpressionTextBox 
+			HintText="Config File Path + Name" 
+			Expression="{Binding Path=ModelItem.ConfigFilename, Mode=TwoWay, Converter={StaticResource ResourceKey=ArgumentToExpressionConverter}}" 
+			OwnerActivity="{Binding Path=ModelItem}" 
+			Margin="110,5,5,5" 
+			VerticalAlignment="Stretch"
+			HorizontalAlignment="Stretch"></sapv:ExpressionTextBox>
+		<sapv:ExpressionTextBox 
+			HintText="Section" 
+			Expression="{Binding Path=ModelItem.Section, Mode=TwoWay, Converter={StaticResource ResourceKey=ArgumentToExpressionConverter}}" 
+			OwnerActivity="{Binding Path=ModelItem}"
+			Margin="110,5,5,5" 
+			VerticalAlignment="Stretch"
+			HorizontalAlignment="Stretch"
+			Grid.Row="1"></sapv:ExpressionTextBox>
+		<Label Content="Config Filename :" Height="28" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" />
+		<Label Content="Section :" Height="28" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Grid.Row="1" />
+		<CheckBox Content="Is Web.config" Height="16" HorizontalAlignment="Left" Margin="12,6,0,0" Name="chkIsWebsite" VerticalAlignment="Top" Grid.Row="2" IsThreeState="False" IsChecked="{Binding Path=ModelItem.IsWebsite, Mode=TwoWay, Converter={StaticResource InArgumentBoolConverter}}" />
+		<CheckBox Content="Specify User Name to set Permissions for" ToolTip="This is the user account that will be used to access the specified encryption string. If this is not done at least once, the account will not be able to decrypt the sections." Height="16" HorizontalAlignment="Left" Margin="12,6,0,0" Name="chkSetUserPermission" VerticalAlignment="Top" Grid.Row="3" IsThreeState="False" Checked="chkSetUserPermission_Checked" Unchecked="chkSetUserPermission_Unchecked" />
+		<sapv:ExpressionTextBox 
+			HintText="Username to set access for." 
+			Expression="{Binding Path=ModelItem.Username, Mode=TwoWay, Converter={StaticResource ResourceKey=ArgumentToExpressionConverter}}" 
+			OwnerActivity="{Binding Path=ModelItem}"
+			Margin="110,5,5,5" 
+			VerticalAlignment="Stretch"
+			HorizontalAlignment="Stretch"
+			Grid.Row="4" EditorLostLogicalFocus="ExpressionTextBox_EditorLostLogicalFocus"></sapv:ExpressionTextBox>
+		<Label Content="Username :" Height="28" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Grid.Row="4" />
+		<Button Content="..." Height="23" HorizontalAlignment="Left" Margin="7,4,0,0" Name="btnPickConfigFilename" VerticalAlignment="Top" Width="28" Grid.Column="1" Click="btnPickConfigFilename_Click" />
+		<Button Content="..." Height="23" HorizontalAlignment="Left" Margin="7,4,0,0" Name="btnPickUserName" VerticalAlignment="Top" Width="28" Grid.Column="1" Grid.Row="4" Click="btnPickUserName_Click" />
+	</Grid>
+</sap:ActivityDesigner>

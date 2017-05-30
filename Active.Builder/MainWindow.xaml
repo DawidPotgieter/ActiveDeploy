@@ -1,0 +1,48 @@
+﻿<Window x:Class="Active.Builder.MainWindow"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				Title="Active Builder" Height="350" Width="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Closing="Window_Closing" Icon="/Active.Builder;component/Icon.ico" UseLayoutRounding="True" Loaded="Window_Loaded" DataContext="{Binding RelativeSource={RelativeSource Self}}">
+	
+		<Grid Name="MainLayout">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="35" />
+			<RowDefinition Height="250*" />
+			<RowDefinition Height="26" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="3*" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="2*" />
+		</Grid.ColumnDefinitions>
+		<GridSplitter ResizeDirection="Columns" Grid.Column="1" Grid.Row="1" Width="5" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave" />
+		<GridSplitter ResizeDirection="Columns" Grid.Column="3" Grid.Row="1" Width="5" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" MouseEnter="GridSplitter_MouseEnter" MouseLeave="GridSplitter_MouseLeave" />
+		<ToolBar HorizontalAlignment="Stretch" Name="MainToolbar" Grid.ColumnSpan="5" Height="Auto">
+			<Button Name="New" ToolTip="New" Click="New_Click">
+				<Image Source="{StaticResource New}" Stretch="None" />
+			</Button>
+			<Button Name="SaveFileAs" ToolTip="Save As..." Click="SaveFileAs_Click">
+				<Image Source="{StaticResource SaveAs}" Stretch="None" />
+			</Button>
+			<ToggleButton Name="SaveFile" ToolTip="Save" Click="SaveFile_Click">
+				<Image Source="{StaticResource Save}" Stretch="None" />
+			</ToggleButton>
+			<Button Name="OpenFile" ToolTip="Open..." Click="OpenFile_Click">
+				<Image Source="{StaticResource Open}" Stretch="None" />
+			</Button>
+			<Button Name="RunFile" ToolTip="Run" Click="RunFile_Click">
+				<Image Source="{StaticResource Run}" Stretch="None" />
+			</Button>
+			<ToggleButton Name="Protect" ToolTip="Protect" Unchecked="Protect_Unchecked" Checked="Protect_Checked" IsChecked="{Binding Encrypt, Mode=OneWay}">
+				<Image Source="{StaticResource Protect}" Stretch="None" />
+			</ToggleButton>
+			<ToggleButton Name="Package" ToolTip="Create Package" Click="Package_Click" Visibility="Hidden">
+				<Image Source="{StaticResource Package}" Stretch="None" />
+			</ToggleButton>
+		</ToolBar>
+		<StatusBar Grid.ColumnSpan="5" Grid.Row="2" HorizontalAlignment="Stretch" Name="MainStatusBar" VerticalAlignment="Stretch">
+			<TextBlock VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="StatusBarText"></TextBlock>
+		</StatusBar>
+	</Grid>
+</Window>

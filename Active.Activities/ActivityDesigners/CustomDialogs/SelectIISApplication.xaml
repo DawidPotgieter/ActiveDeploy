@@ -1,0 +1,24 @@
+﻿<Window x:Class="Active.Activities.ActivityDesigners.CustomDialogs.SelectIISApplication"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="538" Height="137" Loaded="Window_Loaded" ShowInTaskbar="False" ResizeMode="NoResize" Title="Select IIS Application" Topmost="True" WindowStartupLocation="CenterScreen">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<ComboBox 
+			Grid.Row="0"
+			Name="cmbSite"  Width="385" Margin="110,5,5,5" SelectionChanged="cmbSite_SelectionChanged" />
+		<ComboBox 
+			Grid.Row="1"
+			Name="cmbApplicationPath" Width="385" Margin="110,5,5,5" SelectionChanged="cmbVirtualDirectory_SelectionChanged" />
+		<Label Content="Site :" Height="28" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Grid.Row="0" />
+		<Label Content="Application Path :" Height="28" HorizontalAlignment="Left" Margin="5,6,0,0" VerticalAlignment="Top" Grid.Row="1" />
+		<Button Content="Ok" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="429,9,0,0" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" />
+		<Button Content="Cancel" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="348,9,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+	</Grid>
+</Window>

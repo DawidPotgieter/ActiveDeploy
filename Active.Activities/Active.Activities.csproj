@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F5441B7-427B-489F-9D00-D73B97A14A55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Active.Activities</RootNamespace>
+    <AssemblyName>Active.Activities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Azure.KeyVault.Core">
+      <HintPath>..\Packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration.Wrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Microsoft.Web.Administration.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.TaskScheduler, Version=1.6.4186.14621, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\WindowsAzure.Storage.7.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityDesigners\AzureQueryBlobsDesigner.xaml.cs">
+      <DependentUpon>AzureQueryBlobsDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\AzureCreateBlobContainerDesigner.xaml.cs">
+      <DependentUpon>AzureCreateBlobContainerDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\Converters\InArgumentBoolConverter.cs" />
+    <Compile Include="ActivityDesigners\CopyFolderDesigner.xaml.cs">
+      <DependentUpon>CopyFolderDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\CreateEventLogDesigner.xaml.cs">
+      <DependentUpon>CreateEventLogDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\CreateFolderDesigner.xaml.cs">
+      <DependentUpon>CreateFolderDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\CreateSimpleScheduledTaskDesigner.xaml.cs">
+      <DependentUpon>CreateSimpleScheduledTaskDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\CreateUserDesigner.xaml.cs">
+      <DependentUpon>CreateUserDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\CustomDialogs\FindIdentities.xaml.cs">
+      <DependentUpon>FindIdentities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\CustomDialogs\SelectIISApplication.xaml.cs">
+      <DependentUpon>SelectIISApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\EncryptConfigSectionDesigner.xaml.cs">
+      <DependentUpon>EncryptConfigSectionDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\InvokeProcessDesigner.xaml.cs">
+      <DependentUpon>InvokeProcessDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\MessageBoxDesigner.xaml.cs">
+      <DependentUpon>MessageBoxDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\MSBuildCmdDesigner.xaml.cs">
+      <DependentUpon>MSBuildCmdDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\MSDeployDesigner.xaml.cs">
+      <DependentUpon>MSDeployDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\Converters\ValueToInArgumentLiteralConverter.cs" />
+    <Compile Include="ActivityDesigners\SetFolderPermissionsDesigner.xaml.cs">
+      <DependentUpon>SetFolderPermissionsDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\SqlPackageDesigner.xaml.cs">
+      <DependentUpon>SqlPackageDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\UserControls\AzureBlobStorageSettings.xaml.cs">
+      <DependentUpon>AzureBlobStorageSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\UserControls\AzureStorageSettings.xaml.cs">
+      <DependentUpon>AzureStorageSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigners\VsdbcmdDesigner.xaml.cs">
+      <DependentUpon>VsdbcmdDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Azure\QueryBlobs.cs" />
+    <Compile Include="Azure\CreateBlobContainerIfNotExists.cs" />
+    <Compile Include="Azure\BlobStorageBase.cs" />
+    <Compile Include="Azure\StorageBase.cs" />
+    <Compile Include="CopyFolder.cs" />
+    <Compile Include="CreateEventLog.cs" />
+    <Compile Include="CreateFolder.cs" />
+    <Compile Include="CreateSqlDbUser.cs" />
+    <Compile Include="CreateSqlLogin.cs" />
+    <Compile Include="DeleteFilesAndFolders.cs" />
+    <Compile Include="EncryptConfigSection.cs" />
+    <Compile Include="ExecuteSqlNonQuery.cs" />
+    <Compile Include="ExecuteXaml.cs" />
+    <Compile Include="Helpers\AssemblyLoader.cs" />
+    <Compile Include="Helpers\CommandLine.cs" />
+    <Compile Include="CreateSimpleScheduledTask.cs" />
+    <Compile Include="CreateUser.cs" />
+    <Compile Include="Helpers\DesignerHelper.cs" />
+    <Compile Include="Helpers\ExceptionManager.cs" />
+    <Compile Include="Helpers\ActivityConsole.cs" />
+    <Compile Include="Helpers\ConsoleDataArrivedEventArgs.cs" />
+    <Compile Include="Helpers\FrameworkHelper.cs" />
+    <Compile Include="Helpers\SystemManagementObjects.cs" />
+    <Compile Include="Helpers\ZipStorer.cs" />
+    <Compile Include="MSBuildCmd.cs" />
+    <Compile Include="SetFolderPermissions.cs" />
+    <Compile Include="SqlPackage.cs" />
+    <Compile Include="UnZip.cs" />
+    <Compile Include="WriteLine.cs" />
+    <Compile Include="XamlProviders\DefaultXamlFileProvider.cs" />
+    <Compile Include="XamlProviders\Encoding.cs" />
+    <Compile Include="XamlProviders\EncryptedXamlFileProvider.cs" />
+    <Compile Include="XamlProviders\HexUtil.cs" />
+    <Compile Include="XamlProviders\IXamlFileProvider.cs" />
+    <Compile Include="Helpers\StringOutputLogger.cs" />
+    <Compile Include="InvokeProcess.cs" />
+    <Compile Include="MessageBox.cs" />
+    <Compile Include="MSBuild.cs" />
+    <Compile Include="MSDeploy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadAppConnectionString.cs" />
+    <Compile Include="ReadAppSetting.cs" />
+    <Compile Include="ReadRegistryValue.cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="RunScheduledTask.cs" />
+    <Compile Include="SetServiceStartupMode.cs" />
+    <Compile Include="SimpleSendMail.cs" />
+    <Compile Include="StartService.cs" />
+    <Compile Include="StopService.cs" />
+    <Compile Include="Vsdbcmd.cs" />
+    <Compile Include="WriteExceptionTrace.cs" />
+    <Compile Include="XamlProviders\RijndaelAES.cs" />
+    <Compile Include="XamlProviders\XamlFileProviderFactory.cs" />
+    <Compile Include="Zip.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InvokeProcess.png" />
+    <Resource Include="Resources\MessageBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SimpleSendMail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SetServiceStartupMode.png" />
+    <Resource Include="Resources\StartService.png" />
+    <Resource Include="Resources\StopService.png" />
+    <Resource Include="Resources\WriteExceptionTrace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dependencies\Microsoft.Win32.TaskScheduler.dll" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreateSimpleScheduledTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RunScheduledTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreateUser.png" />
+    <Resource Include="Resources\MSBuild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ActivityDesigners\AzureQueryBlobsDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ActivityDesigners\AzureCreateBlobContainerDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\CopyFolderDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\CreateEventLogDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\CreateFolderDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\CreateSimpleScheduledTaskDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\CreateUserDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\CustomDialogs\FindIdentities.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\CustomDialogs\SelectIISApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\EncryptConfigSectionDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\InvokeProcessDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\MessageBoxDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\MSBuildCmdDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\MSDeployDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\SetFolderPermissionsDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\SqlPackageDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\UserControls\AzureBlobStorageSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ActivityDesigners\UserControls\AzureStorageSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigners\VsdbcmdDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CopyFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExecuteXaml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ReadRegistryValue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddToCollection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Assign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CancellationScope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ClearCollection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CompensableActivity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Compensate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Delay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DoWhile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExistsInCollection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Flowchart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlowDecision.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlowSwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ForEach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\If.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InvokeMethod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Parallel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ParallelForEach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Persist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PickBranch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RemoveFromCollection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Rethrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Sequence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TerminateWorkflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Throw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TransactionScope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TryCatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\While.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WriteLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExecuteSqlNonQuery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ReadAppConnectionString.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreateSqlDbUser.png" />
+    <Resource Include="Resources\CreateSqlLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MSDeploy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ReadAppSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EncryptConfigSection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Vsdbcmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreateEventLog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreateFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SetFolderPermissions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dependencies\Microsoft.Web.Administration.Wrapper.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UnZip.png" />
+    <Resource Include="Resources\Zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DeleteFilesAndFolders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SQLPackage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MSBuildCmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreateBlobContainerIfNotExists.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

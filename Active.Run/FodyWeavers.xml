@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Weavers>
+	<Costura IncludeDebugSymbols="false">
+		<ExcludeAssemblies>
+			Active.Activities
+			Microsoft.Web.Administration
+			Microsoft.Data.Services.Client.resources
+			Microsoft.Data.OData.resources
+			Microsoft.Data.Edm.resources
+			System.Spatial.resources
+		</ExcludeAssemblies>
+	</Costura>
+</Weavers>
